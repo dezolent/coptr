@@ -1,4 +1,4 @@
-import { Music, Instagram, Facebook, Youtube, Apple, Cloud, CirclePlay, Music2 } from 'lucide-react';
+import { Music, Instagram, Facebook, Youtube, Apple, Cloud, Music2 } from 'lucide-react';
 
 export default function HomePage() {
   const socials = [
@@ -7,7 +7,7 @@ export default function HomePage() {
     { name: 'Apple Music', url: 'https://music.apple.com/us/artist/coptr/1839103475', icon: Apple, color: '#FA243C' },
     { name: 'SoundCloud', url: 'https://soundcloud.com/coptrmp3', icon: Cloud, color: '#FF5500' },
     { name: 'YouTube', url: 'https://youtube.com/@coptr.mp3', icon: Youtube, color: '#FF0000' },
-    { name: 'YouTube Music', url: 'https://music.youtube.com/channel/UCZD-gIJ0TCD4mouGZIGHE5g', icon: CirclePlay, color: '#FF0000' },
+    { name: 'YouTube Music', url: 'https://music.youtube.com/channel/UCZD-gIJ0TCD4mouGZIGHE5g', icon: Youtube, color: '#FF0000' },
     { name: 'Instagram', url: 'https://instagram.com/coptr.mp3/', icon: Instagram, color: '#E4405F' },
     { name: 'Facebook', url: 'https://www.facebook.com/coptrmp3/', icon: Facebook, color: '#1877F2' },
     { name: 'TikTok', url: 'https://tiktok.com/@coptr.mp3', icon: Music2, color: '#000000' },
