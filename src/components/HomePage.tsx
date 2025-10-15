@@ -1,11 +1,13 @@
 import { Music, Instagram, Facebook, Youtube, Apple, Play, Cloud, Music2 } from 'lucide-react';
+import { RiSoundcloudFill } from "react-icons/ri";
+
 
 export default function HomePage() {
   const socials = [
     { name: 'LinkTree', url: 'https://linktr.ee/coptr.mp3', icon: Music, color: '#70ffdf' },
     { name: 'Spotify', url: 'https://open.spotify.com/artist/1CDtx3RB970KejjPi8UxfB', icon: Music, color: '#1DB954' },
     { name: 'Apple Music', url: 'https://music.apple.com/us/artist/coptr/1839103475', icon: Apple, color: '#FA243C' },
-    { name: 'SoundCloud', url: 'https://soundcloud.com/coptrmp3', icon: Cloud, color: '#FF5500' },
+    { name: 'SoundCloud', url: 'https://soundcloud.com/coptrmp3', icon: RiSoundcloudFill, color: '#FF5500' },
     { name: 'YouTube', url: 'https://youtube.com/@coptr.mp3', icon: Youtube, color: '#FF0000' },
     { name: 'YouTube Music', url: 'https://music.youtube.com/channel/UCZD-gIJ0TCD4mouGZIGHE5g', icon: Play, color: '#FF0000' },
     { name: 'Instagram', url: 'https://instagram.com/coptr.mp3/', icon: Instagram, color: '#E4405F' },
