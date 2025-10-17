@@ -18,12 +18,18 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-black text-white">
       <div className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1d269b] via-[#045ded] to-[#000000] opacity-80"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#000000] via-[#1d269b] to-[#000000]"></div>
 
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 left-20 w-64 h-64 bg-[#70ffdf] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-          <div className="absolute top-40 right-20 w-64 h-64 bg-[#fd46f0] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-          <div className="absolute bottom-20 left-1/2 w-64 h-64 bg-[#9d4dff] rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+          <div className="absolute top-0 left-0 w-full h-full">
+            <div className="absolute top-20 -left-20 w-96 h-96 bg-[#70ffdf] rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-blob"></div>
+            <div className="absolute top-1/4 right-10 w-[500px] h-[500px] bg-[#045ded] rounded-full mix-blend-screen filter blur-3xl opacity-25 animate-blob animation-delay-2000"></div>
+            <div className="absolute bottom-32 left-1/3 w-[400px] h-[400px] bg-[#fd46f0] rounded-full mix-blend-screen filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#9d4dff] rounded-full mix-blend-screen filter blur-3xl opacity-20 animate-pulse"></div>
+          </div>
+
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(112,255,223,0.1),transparent_50%)]"></div>
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(112,255,223,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(112,255,223,0.05)_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
         </div>
 
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
@@ -45,12 +51,12 @@ export default function HomePage() {
 
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             <a
-              href="http://ffm.to/hotstart"
+              href="https://ffm.to/lost-love"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-4 bg-gradient-to-r from-[#70ffdf] to-[#045ded] text-black font-bold rounded-full hover:shadow-xl hover:shadow-[#70ffdf]/50 transition-all duration-300 transform hover:scale-105"
             >
-              LISTEN TO "HOT START"
+              LISTEN TO "LOST LOVE"
             </a>
           </div>
 
