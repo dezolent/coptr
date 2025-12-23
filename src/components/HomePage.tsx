@@ -122,25 +122,26 @@ export default function HomePage() {
                 href={release.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative overflow-hidden rounded-2xl transition-all duration-500 hover:scale-105 bg-white/5 backdrop-blur-sm border border-white/10 hover:border-[#70ffdf]/50 hover:shadow-2xl hover:shadow-[#70ffdf]/20"
+                className="group relative overflow-hidden rounded-2xl transition-all duration-500 hover:scale-105 border border-white/10 hover:border-[#70ffdf]/50 hover:shadow-2xl hover:shadow-[#70ffdf]/20 aspect-square"
               >
-                <div className="relative">
-                  <img
-                    src={release.artwork}
-                    alt={release.title}
-                    className="w-full h-[500px] object-cover"
-                  />
-                  <ExternalLink
-                    className="absolute top-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity"
-                    size={24}
-                  />
-                </div>
+                <img
+                  src={release.artwork}
+                  alt={release.title}
+                  className="w-full h-full object-cover"
+                />
 
-                <div className="p-6 text-center bg-black">
+                <ExternalLink
+                  className="absolute top-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity z-10"
+                  size={24}
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
                   <h3 className="text-2xl font-bold text-white mb-2">
                     {release.title}
                   </h3>
-                  <h4 className="text-lg text-gray-400">
+                  <h4 className="text-lg text-gray-300">
                     {release.artist}
                   </h4>
                 </div>
