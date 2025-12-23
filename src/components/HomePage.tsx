@@ -1,4 +1,4 @@
-import { Music, Instagram, Facebook, Youtube, Apple, Play, Cloud, Music2 } from 'lucide-react';
+import { Music, Instagram, Facebook, Youtube, Apple, Play, Cloud, Music2, ExternalLink } from 'lucide-react';
 import { RiSoundcloudFill } from "react-icons/ri";
 
 
@@ -13,6 +13,27 @@ export default function HomePage() {
     { name: 'Instagram', url: 'https://instagram.com/coptr.mp3/', icon: Instagram, color: '#E4405F' },
     { name: 'Facebook', url: 'https://www.facebook.com/coptrmp3/', icon: Facebook, color: '#1877F2' },
     { name: 'TikTok', url: 'https://tiktok.com/@coptr.mp3', icon: Music2, color: '#000000' },
+  ];
+
+  const latestReleases = [
+    {
+      title: 'Ride or Die',
+      artist: 'Coptr',
+      url: 'https://ffm.to/coptr_rideordie',
+      artwork: '/artwork/coptr-ride-or-die.jpeg',
+    },
+    {
+      title: 'Lost Love',
+      artist: 'Dezolent, Coptr, & Lillie Price Carter',
+      url: 'https://ffm.to/lost-love',
+      artwork: '/artwork/dezolent-and-coptr-lost-love-featuring-lillie-price-carter.jpg',
+    },
+    {
+      title: 'Hot Start',
+      artist: 'Coptr',
+      url: 'https://ffm.to/hotstart',
+      artwork: '/artwork/coptr-hot-start.jpeg',
+    },
   ];
 
   return (
@@ -90,6 +111,48 @@ export default function HomePage() {
       </div>
 
       <section className="py-20 px-4 bg-gradient-to-b from-black to-[#1d269b]/20">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-[#70ffdf] to-[#fd46f0] bg-clip-text text-transparent">
+            Latest Releases
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+            {latestReleases.map((release, index) => (
+              <a
+                key={index}
+                href={release.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative overflow-hidden rounded-2xl transition-all duration-500 hover:scale-105 bg-white/5 backdrop-blur-sm border border-white/10 hover:border-[#70ffdf]/50 hover:shadow-2xl hover:shadow-[#70ffdf]/20"
+              >
+                <div className="relative">
+                  <img
+                    src={release.artwork}
+                    alt={release.title}
+                    className="w-full h-[500px] object-cover"
+                  />
+                  <ExternalLink
+                    className="absolute top-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity"
+                    size={24}
+                  />
+                </div>
+
+                <div className="p-6 text-center bg-black">
+                  <h3 className="text-2xl font-bold text-white mb-2">
+                    {release.title}
+                  </h3>
+                  <h4 className="text-lg text-gray-400">
+                    {release.artist}
+                  </h4>
+                </div>
+
+                <div className="absolute inset-0 bg-gradient-to-br from-[#70ffdf]/0 to-[#fd46f0]/0 group-hover:from-[#70ffdf]/10 group-hover:to-[#fd46f0]/10 transition-all duration-500 pointer-events-none"></div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-4 bg-gradient-to-b from-[#1d269b]/20 to-[#1d269b]/20">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-center bg-gradient-to-r from-[#70ffdf] to-[#fd46f0] bg-clip-text text-transparent">
             About Coptr

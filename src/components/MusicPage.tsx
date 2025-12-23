@@ -1,48 +1,41 @@
-import { ExternalLink, Music } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
 export default function MusicPage() {
   const releases = [
     {
-      title: 'Hot Start',
-      type: 'Single',
-      url: 'http://ffm.to/hotstart',
-      description: 'Debut release available on all platforms',
-      artwork: '/artwork/coptr-hot-start.jpeg',
-      featured: true,
-    },
-    {
-      title: 'Lost Love ft. Lillie Price Carter',
-      type: 'Collaboration with Dezolent',
-      url: 'https://soundcloud.com/dezolent/lost-love/s-beJGNKM3pu1',
-      description: 'Emotional melodic dubstep collaboration',
-      artwork: '/artwork/dezolent-and-coptr-lost-love-featuring-lillie-price-carter.jpg',
-    },
-    {
       title: 'Ride or Die',
-      type: 'Original',
-      url: 'https://soundcloud.com/coptrmp3/ride-or-die/s-Jm5tfhP1IEb',
-      description: 'High-energy brostep anthem',
+      artist: 'Coptr',
+      url: 'https://ffm.to/coptr_rideordie',
       artwork: '/artwork/coptr-ride-or-die.jpeg',
     },
     {
+      title: 'Lost Love',
+      artist: 'Dezolent, Coptr, & Lillie Price Carter',
+      url: 'https://ffm.to/lost-love',
+      artwork: '/artwork/dezolent-and-coptr-lost-love-featuring-lillie-price-carter.jpg',
+    },
+    {
+      title: 'Hot Start',
+      artist: 'Coptr',
+      url: 'https://ffm.to/hotstart',
+      artwork: '/artwork/coptr-hot-start.jpeg',
+    },
+    {
       title: '2 Much (Coptr Flip)',
-      type: 'Remix',
-      url: 'https://soundcloud.com/coptrmp3/justin-bieber-2-much-coptr-flip/s-HbvSz7QKU4N',
-      description: 'Justin Bieber remix with heavy bass',
+      artist: 'Justin Bieber',
+      url: 'https://soundcloud.com/coptrmp3/justin-bieber-2-much-coptr-flip-free-dl',
       artwork: '/artwork/justin-bieber-2-much-coptr-flip.jpeg',
     },
     {
-      title: 'Signal Machine',
-      type: 'Mashup Remix',
+      title: 'Signal Machine (Coptr Edit)',
+      artist: 'Porter Robinson, Rezz, & Grabbitz',
       url: 'https://soundcloud.com/coptrmp3/signal-machine-live-tool/s-YUcVLLHfYGm',
-      description: 'Coptr mashup remix of Sad Machine by Porter Robinson and Signal by Rezz featuring Grabbitz',
       artwork: '/artwork/coptr-signal-machine-flip.jpeg',
     },
     {
       title: 'Demo Mix',
-      type: '20 Minute Mix',
+      artist: 'Coptr',
       url: 'https://soundcloud.com/coptrmp3/demo-mix-3/s-zfr5ILcHd2X',
-      description: 'Full showcase of Coptr\'s sound',
       artwork: '/artwork/coptr-demo-mix-2025.jpeg',
     },
   ];
@@ -66,58 +59,30 @@ export default function MusicPage() {
               href={release.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`group relative overflow-hidden rounded-2xl transition-all duration-500 hover:scale-105 ${
-                release.featured
-                  ? 'md:col-span-2 lg:col-span-3'
-                  : ''
-              } backdrop-blur-sm border border-white/10 hover:border-[#70ffdf]/50 hover:shadow-2xl hover:shadow-[#70ffdf]/20`}
+              className="group relative overflow-hidden rounded-2xl transition-all duration-500 hover:scale-105 bg-white/5 backdrop-blur-sm border border-white/10 hover:border-[#70ffdf]/50 hover:shadow-2xl hover:shadow-[#70ffdf]/20"
             >
-              <div className={`relative ${release.featured ? 'md:flex md:items-center' : ''}`}>
-                <div className={`relative ${release.featured ? 'md:w-1/2' : 'w-full'} overflow-hidden`}>
-                  <img
-                    src={release.artwork}
-                    alt={release.title}
-                    className={`w-full object-cover transition-transform duration-700 group-hover:scale-110 ${
-                      release.featured ? 'h-[400px] md:h-[500px]' : 'h-64'
-                    }`}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
-                </div>
-
-                <div className={`relative p-8 ${release.featured ? 'md:w-1/2 md:p-12' : 'absolute inset-0 flex flex-col justify-end'}`}>
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-2">
-                        <Music className="text-[#70ffdf]" size={release.featured ? 32 : 24} />
-                        <span className="text-sm font-medium text-[#fd46f0] uppercase tracking-wider">
-                          {release.type}
-                        </span>
-                      </div>
-                      <h3 className={`font-bold text-white mb-2 ${
-                        release.featured ? 'text-3xl sm:text-4xl' : 'text-2xl'
-                      }`}>
-                        {release.title}
-                      </h3>
-                      <p className="text-gray-300 leading-relaxed">
-                        {release.description}
-                      </p>
-                    </div>
-                    <ExternalLink
-                      className="text-[#70ffdf] opacity-0 group-hover:opacity-100 transition-opacity ml-4 flex-shrink-0"
-                      size={24}
-                    />
-                  </div>
-
-                  {release.featured && (
-                    <div className="mt-6 inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#70ffdf] to-[#045ded] text-black font-bold rounded-full group-hover:shadow-xl group-hover:shadow-[#70ffdf]/50 transition-all">
-                      <Music size={20} />
-                      <span>LISTEN NOW</span>
-                    </div>
-                  )}
-                </div>
+              <div className="relative">
+                <img
+                  src={release.artwork}
+                  alt={release.title}
+                  className="w-full h-[500px] object-cover"
+                />
+                <ExternalLink
+                  className="absolute top-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity"
+                  size={24}
+                />
               </div>
 
-              <div className={`absolute inset-0 bg-gradient-to-br from-[#70ffdf]/0 to-[#fd46f0]/0 group-hover:from-[#70ffdf]/10 group-hover:to-[#fd46f0]/10 transition-all duration-500 pointer-events-none`}></div>
+              <div className="p-6 text-center bg-black">
+                <h3 className="text-2xl font-bold text-white mb-2">
+                  {release.title}
+                </h3>
+                <h4 className="text-lg text-gray-400">
+                  {release.artist}
+                </h4>
+              </div>
+
+              <div className="absolute inset-0 bg-gradient-to-br from-[#70ffdf]/0 to-[#fd46f0]/0 group-hover:from-[#70ffdf]/10 group-hover:to-[#fd46f0]/10 transition-all duration-500 pointer-events-none"></div>
             </a>
           ))}
         </div>
