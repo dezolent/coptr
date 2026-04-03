@@ -3,6 +3,12 @@ import { ExternalLink } from 'lucide-react';
 export default function MusicPage() {
   const releases = [
     {
+      title: 'Gone (Coptr Remix)',
+      artist: 'Coptr, Dezolent, & Mona Moua',
+      url: 'https://dezolent.com/stream/gone-coptr-remix',
+      artwork: '/artwork/gone-coptr-remix.webp',
+    },
+    {
       title: 'Ride or Die',
       artist: 'Coptr',
       url: 'https://ffm.to/coptr_rideordie',
@@ -11,7 +17,7 @@ export default function MusicPage() {
     {
       title: 'Lost Love',
       artist: 'Dezolent, Coptr, & Lillie Price Carter',
-      url: 'https://ffm.to/lost-love',
+      url: 'https://dezolent.com/tracks/lost-love',
       artwork: '/artwork/dezolent-and-coptr-lost-love-featuring-lillie-price-carter.jpg',
     },
     {
