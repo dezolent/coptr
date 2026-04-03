@@ -31,7 +31,7 @@ export default function HomePage() {
     {
       title: 'Lost Love',
       artist: 'Dezolent, Coptr, & Lillie Price Carter',
-      url: 'https:dezolent.com/stream/lost-love',
+      url: 'https://dezolent.com/stream/lost-love',
       artwork: '/artwork/dezolent-and-coptr-lost-love-featuring-lillie-price-carter.jpg',
     },
   ];
