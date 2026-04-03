@@ -23,16 +23,16 @@ export default function HomePage() {
       artwork: '/artwork/coptr-ride-or-die.jpeg',
     },
     {
-      title: 'Lost Love',
-      artist: 'Dezolent, Coptr, & Lillie Price Carter',
-      url: 'https://ffm.to/lost-love',
-      artwork: '/artwork/dezolent-and-coptr-lost-love-featuring-lillie-price-carter.jpg',
+      title: 'Gone (Coptr Remix)',
+      artist: 'Coptr, Dezolent, & Mona Moua',
+      url: 'https://dezolent.com/tracks/gone-coptr-remix',
+      artwork: '/artwork/gone-coptr-remix.webp',
     },
     {
-      title: 'Hot Start',
-      artist: 'Coptr',
-      url: 'https://ffm.to/hotstart',
-      artwork: '/artwork/coptr-hot-start.jpeg',
+      title: 'Lost Love',
+      artist: 'Dezolent, Coptr, & Lillie Price Carter',
+      url: 'https:dezolent.com/stream/lost-love',
+      artwork: '/artwork/dezolent-and-coptr-lost-love-featuring-lillie-price-carter.jpg',
     },
   ];
 
