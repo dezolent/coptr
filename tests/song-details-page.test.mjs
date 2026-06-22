@@ -39,12 +39,22 @@ test('song details page places accessible social icons after metadata', async ()
   assert.match(source, /mt-6 flex flex-wrap justify-center gap-2 lg:justify-start/);
 });
 
-test('streaming cards use large platform logos without separate text labels', async () => {
+test('streaming cards use platform logos without separate text labels', async () => {
   const source = await readFile(pageUrl, 'utf8');
 
   assert.match(source, /src=\{platformLogos\[link\.platform\]\}/);
   assert.match(source, /alt=\{link\.platform\}/);
-  assert.match(source, /className="h-12 w-32 object-contain object-left sm:w-36"/);
+  assert.match(source, /className="h-8 w-32 object-contain object-left sm:w-36"/);
   assert.doesNotMatch(source, />\s*\{link\.platform\}\s*<\/span>/);
   assert.doesNotMatch(source, /rounded-xl bg-white p-2 shadow-inner/);
+});
+
+test('song details page conditionally renders an external free download action', async () => {
+  const source = await readFile(pageUrl, 'utf8');
+
+  assert.match(source, /song\.download &&/);
+  assert.match(source, /href=\{song\.download\}/);
+  assert.match(source, /target="_blank"/);
+  assert.match(source, /rel="noopener noreferrer"/);
+  assert.match(source, />\s*Free Download\s*</);
 });

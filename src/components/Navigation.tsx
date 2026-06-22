@@ -9,7 +9,6 @@ export default function Navigation() {
   const navItems = [
     { path: '/', label: 'Home' },
     { path: '/music', label: 'Music' },
-    { path: '/gallery', label: 'Gallery' },
     { path: '/press-kit', label: 'Press Kit' },
   ];
 

@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowUpRight, CalendarDays, Clock3, Tag } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, CalendarDays, Clock3, Download, Tag } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
 import { socials } from '../data/socials';
 import { getSongById, platformLogos } from '../data/songs';
@@ -140,20 +140,35 @@ export default function SongDetailsPage() {
                 {song.streamingLinks.length} {song.streamingLinks.length === 1 ? 'link' : 'links'}
               </span>
             </div>
-
+            
             <div className="space-y-3">
+              {song.download && (
+                  <a
+                      href={song.download}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group  flex min-h-16 w-full items-center justify-between rounded-2xl bg-gradient-to-r from-[#70ffdf] to-[#045ded] px-5 py-4 font-black text-black transition duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-[#70ffdf]/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#70ffdf] focus-visible:ring-offset-2 focus-visible:ring-offset-black motion-reduce:transform-none"
+                  >
+                    <span>Free Download</span>
+                    <Download
+                        size={22}
+                        aria-hidden="true"
+                        className="transition-transform group-hover:translate-y-0.5 motion-reduce:transform-none"
+                    />
+                  </a>
+              )}
               {song.streamingLinks.map((link) => (
                 <a
                   key={link.platform}
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex min-h-20 w-full items-center gap-4 rounded-2xl border border-white/10 bg-white px-4 py-3 backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#70ffdf]/55 hover:bg-white/[0.09] hover:shadow-lg hover:shadow-[#045ded]/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#70ffdf] sm:px-5"
+                  className="group flex min-h-16 w-full items-center gap-4 rounded-2xl border border-white/10 bg-white px-4 py-3 backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:border-[#70ffdf]/55 hover:bg-white/[0.09] hover:shadow-lg hover:shadow-[#045ded]/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#70ffdf] sm:px-5"
                 >
                   <img
                     src={platformLogos[link.platform]}
                     alt={link.platform}
-                    className="h-12 w-32 object-contain object-left sm:w-36"
+                    className="h-8 w-32 object-contain object-left sm:w-36"
                   />
                   <span className="ml-auto flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 text-gray-400 transition group-hover:border-[#70ffdf]/40 group-hover:text-[#70ffdf]">
                     <ArrowUpRight size={19} />
@@ -161,6 +176,8 @@ export default function SongDetailsPage() {
                 </a>
               ))}
             </div>
+
+
           </section>
         </div>
       </div>

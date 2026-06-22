@@ -29,6 +29,7 @@ export interface Song {
   price?: number;
   genres?: string[];
   duration?: string;
+  download?: string;
 }
 
 export const platformLogos: Record<StreamingPlatform, string> = {
@@ -151,6 +152,7 @@ export const songs: Song[] = [
     duration: '2:45',
     fanLink: '/stream/cruisin',
     artist: 'Coptr',
+    download: 'https://hypeddit.com/coptr/cruisinfreedl',
     streamingLinks: [
       { platform: 'YouTube', url: 'https://www.youtube.com/watch?v=h8DHTArICVo' },
       { platform: 'Spotify', url: 'https://open.spotify.com/track/57SoNztbS7ixeA1FMaoO0M' },
@@ -167,6 +169,7 @@ export const songs: Song[] = [
     artist: 'Justin Bieber',
     coverArt: '/covers/justin-bieber-2-much-coptr-flip.webp',
     fanLink: '/stream/2-much-coptr-flip',
+    download: 'https://push.fm/cu/1vvfn15e',
     streamingLinks: [
       { platform: 'SoundCloud', url: 'https://soundcloud.com/coptrmp3/justin-bieber-2-much-coptr-flip-free-dl' },
     ],
