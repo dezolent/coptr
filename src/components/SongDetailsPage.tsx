@@ -2,6 +2,7 @@ import { ArrowLeft, ArrowUpRight, CalendarDays, Clock3, Tag } from 'lucide-react
 import { Link, useParams } from 'react-router-dom';
 import { socials } from '../data/socials';
 import { getSongById, platformLogos } from '../data/songs';
+import SongSeo from './SongSeo';
 
 function formatReleaseDate(releaseDate: string) {
   return new Intl.DateTimeFormat('en-US', {
@@ -44,6 +45,7 @@ export default function SongDetailsPage() {
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-black px-4 pb-20 pt-28 text-white sm:px-6 sm:pt-32">
+      <SongSeo song={song} />
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-1/2 top-20 h-[32rem] w-[32rem] -translate-x-1/2 rounded-full bg-[#1d269b]/35 blur-[110px]" />
         <div className="absolute -right-24 top-1/3 h-72 w-72 rounded-full bg-[#fd46f0]/15 blur-[100px]" />
