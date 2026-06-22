@@ -17,16 +17,16 @@ export default function HomePage() {
 
   const latestReleases = [
     {
+      title: 'CRUISIN',
+      artist: 'Coptr',
+      url: 'https://soundcloud.com/coptrmp3/cruisin',
+      artwork: '/artwork/coptr-crusin.webp',
+    },
+    {
       title: 'Ride or Die',
       artist: 'Coptr',
       url: 'https://ffm.to/coptr_rideordie',
       artwork: '/artwork/coptr-ride-or-die.jpeg',
-    },
-    {
-      title: 'Gone (Coptr Remix)',
-      artist: 'Coptr, Dezolent, & Mona Moua',
-      url: 'https://dezolent.com/tracks/gone-coptr-remix',
-      artwork: '/artwork/gone-coptr-remix.webp',
     },
     {
       title: 'Lost Love',
