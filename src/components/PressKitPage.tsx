@@ -11,19 +11,19 @@ export default function PressKitPage() {
   ];
 
   const logos = [
-    { name: 'Circle Logo (Black)', src: '/coptr-black-circle-logo.png', bg: 'bg-white' },
-    { name: 'Circle Logo (White)', src: '/coptr-white-circle-logo.png', bg: 'bg-black' },
-    { name: 'Text Logo (Black)', src: '/coptr-black-text-logo.png', bg: 'bg-white' },
-    { name: 'Text Logo (White)', src: '/coptr-white-text-logo.png', bg: 'bg-black' },
+    { name: 'Circle Logo (Black)', src: '/brand/coptr-black-circle-logo.webp', bg: 'bg-white' },
+    { name: 'Circle Logo (White)', src: '/brand/coptr-white-circle-logo.webp', bg: 'bg-black' },
+    { name: 'Text Logo (Black)', src: '/brand/coptr-black-text-logo.webp', bg: 'bg-white' },
+    { name: 'Text Logo (White)', src: '/brand/coptr-white-text-logo.webp', bg: 'bg-black' },
   ];
 
   const photos = [
-    { name: 'Profile Photo', src: '/coptr-profile-image.JPG' },
-    { name: 'Performance Photo', src: '/coptr-dj-performance-photo.JPG' },
-    { name: 'Side Profile', src: '/coptr-sideview.JPG' },
-    { name: 'Portrait with Sunglasses', src: '/coptr-sunglasses.JPG' },
-    { name: 'Secondary Profile', src: '/coptr-secondary-profile.JPG' },
-    { name: 'Performance with Sunglasses', src: '/coptr-performance-sunglasses.JPG' },
+    { name: 'Profile Photo', src: '/profile/coptr-profile-image.webp' },
+    { name: 'Performance Photo', src: '/profile/coptr-dj-performance-photo.webp' },
+    { name: 'Side Profile', src: '/profile/coptr-sideview.webp' },
+    { name: 'Portrait with Sunglasses', src: '/profile/coptr-sunglasses.webp' },
+    { name: 'Secondary Profile', src: '/profile/coptr-secondary-profile.webp' },
+    { name: 'Performance with Sunglasses', src: '/profile/coptr-performance-sunglasses.webp' },
   ];
 
   return (

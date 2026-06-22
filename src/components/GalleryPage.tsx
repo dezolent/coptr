@@ -1,12 +1,12 @@
 export default function GalleryPage() {
   const images = [
     {
-      src: '/coptr-profile-image.JPG',
+      src: '/profile/coptr-profile-image.webp',
       alt: 'Coptr Profile',
       title: 'Profile',
     },
     {
-      src: '/coptr-dj-performance-photo.JPG',
+      src: '/profile/coptr-dj-performance-photo.webp',
       alt: 'Coptr DJ Performance',
       title: 'Live Performance',
     },

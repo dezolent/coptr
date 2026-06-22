@@ -1,40 +1,11 @@
-import { Music, Instagram, Facebook, Youtube, Apple, Play, Cloud, Music2, ExternalLink } from 'lucide-react';
-import { RiSoundcloudFill } from "react-icons/ri";
+import { ArrowUpRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { socials } from '../data/socials';
+import { getSongsByNewestRelease } from '../data/songs';
 
 
 export default function HomePage() {
-  const socials = [
-    { name: 'LinkTree', url: 'https://linktr.ee/coptr.mp3', icon: Music, color: '#70ffdf' },
-    { name: 'Spotify', url: 'https://open.spotify.com/artist/1CDtx3RB970KejjPi8UxfB', icon: Music, color: '#1DB954' },
-    { name: 'Apple Music', url: 'https://music.apple.com/us/artist/coptr/1839103475', icon: Apple, color: '#FA243C' },
-    { name: 'SoundCloud', url: 'https://soundcloud.com/coptrmp3', icon: RiSoundcloudFill, color: '#FF5500' },
-    { name: 'YouTube', url: 'https://youtube.com/@coptr.mp3', icon: Youtube, color: '#FF0000' },
-    { name: 'YouTube Music', url: 'https://music.youtube.com/channel/UCZD-gIJ0TCD4mouGZIGHE5g', icon: Play, color: '#FF0000' },
-    { name: 'Instagram', url: 'https://instagram.com/coptr.mp3/', icon: Instagram, color: '#E4405F' },
-    { name: 'Facebook', url: 'https://www.facebook.com/coptrmp3/', icon: Facebook, color: '#1877F2' },
-    { name: 'TikTok', url: 'https://tiktok.com/@coptr.mp3', icon: Music2, color: '#000000' },
-  ];
-
-  const latestReleases = [
-    {
-      title: 'CRUISIN',
-      artist: 'Coptr',
-      url: 'https://soundcloud.com/coptrmp3/cruisin',
-      artwork: '/artwork/coptr-crusin.webp',
-    },
-    {
-      title: 'Ride or Die',
-      artist: 'Coptr',
-      url: 'https://ffm.to/coptr_rideordie',
-      artwork: '/artwork/coptr-ride-or-die.jpeg',
-    },
-    {
-      title: 'Lost Love',
-      artist: 'Dezolent, Coptr, & Lillie Price Carter',
-      url: 'https://dezolent.com/stream/lost-love',
-      artwork: '/artwork/dezolent-and-coptr-lost-love-featuring-lillie-price-carter.jpg',
-    },
-  ];
+  const latestReleases = getSongsByNewestRelease().slice(0, 3);
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -56,7 +27,7 @@ export default function HomePage() {
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
           <div className="mb-8">
             <img
-              src="/coptr-white-text-logo.png"
+              src="/brand/coptr-white-text-logo.webp"
               alt="Coptr"
               className="h-24 sm:h-32 md:h-40 mx-auto mb-6 drop-shadow-2xl"
             />
@@ -71,14 +42,12 @@ export default function HomePage() {
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 mb-12">
-            <a
-              href="https://ffm.to/lost-love"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to={latestReleases[0].fanLink}
               className="px-8 py-4 bg-gradient-to-r from-[#70ffdf] to-[#045ded] text-black font-bold rounded-full hover:shadow-xl hover:shadow-[#70ffdf]/50 transition-all duration-300 transform hover:scale-105"
             >
-              LISTEN TO "LOST LOVE"
-            </a>
+              LISTEN TO "{latestReleases[0].title}"
+            </Link>
           </div>
 
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4 max-w-4xl mx-auto">
@@ -90,10 +59,10 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 className="group flex flex-col items-center justify-center p-4 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all duration-300 border border-white/10 hover:border-[#70ffdf]/50 hover:shadow-lg hover:shadow-[#70ffdf]/20"
               >
-                <social.icon
-                  size={32}
-                  className="mb-2 transition-transform duration-300 group-hover:scale-110"
-                  style={{ color: social.color }}
+                <img
+                  src={social.image}
+                  alt={social.name}
+                  className="w-8 h-8 object-contain mb-2 transition-transform duration-300 group-hover:scale-110"
                 />
                 <span className="text-xs text-gray-400 group-hover:text-white transition-colors text-center">
                   {social.name}
@@ -116,21 +85,19 @@ export default function HomePage() {
             Latest Releases
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-            {latestReleases.map((release, index) => (
-              <a
-                key={index}
-                href={release.url}
-                target="_blank"
-                rel="noopener noreferrer"
+            {latestReleases.map((song) => (
+              <Link
+                key={song.id}
+                to={song.fanLink}
                 className="group relative overflow-hidden rounded-2xl transition-all duration-500 hover:scale-105 border border-white/10 hover:border-[#70ffdf]/50 hover:shadow-2xl hover:shadow-[#70ffdf]/20 aspect-square"
               >
                 <img
-                  src={release.artwork}
-                  alt={release.title}
+                  src={song.coverArt}
+                  alt={song.title}
                   className="w-full h-full object-cover"
                 />
 
-                <ExternalLink
+                <ArrowUpRight
                   className="absolute top-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity z-10"
                   size={24}
                 />
@@ -139,15 +106,15 @@ export default function HomePage() {
 
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
                   <h3 className="text-2xl font-bold text-white mb-2">
-                    {release.title}
+                    {song.title}
                   </h3>
                   <h4 className="text-lg text-gray-300">
-                    {release.artist}
+                    {song.artist}
                   </h4>
                 </div>
 
                 <div className="absolute inset-0 bg-gradient-to-br from-[#70ffdf]/0 to-[#fd46f0]/0 group-hover:from-[#70ffdf]/10 group-hover:to-[#fd46f0]/10 transition-all duration-500 pointer-events-none"></div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>

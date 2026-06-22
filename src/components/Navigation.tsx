@@ -21,12 +21,12 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center">
             <img
-              src="/coptr-black-circle-logo.png"
+              src="/brand/coptr-black-circle-logo.webp"
               alt="Coptr Logo"
               className="h-12 w-12 mr-3 brightness-0 invert"
             />
             <img
-              src="/coptr-white-text-logo.png"
+              src="/brand/coptr-white-text-logo.webp"
               alt="Coptr"
               className="h-8"
             />

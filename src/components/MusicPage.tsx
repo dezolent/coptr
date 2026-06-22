@@ -1,56 +1,9 @@
-import { ExternalLink } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { getSongsByNewestRelease } from '../data/songs';
 
 export default function MusicPage() {
-  const releases = [
-    {
-      title: 'CRUISIN',
-      artist: 'Coptr',
-      url: 'https://soundcloud.com/coptrmp3/cruisin',
-      artwork: '/artwork/coptr-cruisin.webp',
-    },
-    {
-      title: 'Gone (Coptr Remix)',
-      artist: 'Coptr, Dezolent, & Mona Moua',
-      url: 'https://dezolent.com/stream/gone-coptr-remix',
-      artwork: '/artwork/gone-coptr-remix.webp',
-    },
-    {
-      title: 'Ride or Die',
-      artist: 'Coptr',
-      url: 'https://ffm.to/coptr_rideordie',
-      artwork: '/artwork/coptr-ride-or-die.jpeg',
-    },
-    {
-      title: 'Lost Love',
-      artist: 'Dezolent, Coptr, & Lillie Price Carter',
-      url: 'https://dezolent.com/tracks/lost-love',
-      artwork: '/artwork/dezolent-and-coptr-lost-love-featuring-lillie-price-carter.jpg',
-    },
-    {
-      title: 'Hot Start',
-      artist: 'Coptr',
-      url: 'https://ffm.to/hotstart',
-      artwork: '/artwork/coptr-hot-start.jpeg',
-    },
-    {
-      title: '2 Much (Coptr Flip)',
-      artist: 'Justin Bieber',
-      url: 'https://soundcloud.com/coptrmp3/justin-bieber-2-much-coptr-flip-free-dl',
-      artwork: '/artwork/justin-bieber-2-much-coptr-flip.jpeg',
-    },
-    {
-      title: 'Signal Machine (Coptr Edit)',
-      artist: 'Porter Robinson, Rezz, & Grabbitz',
-      url: 'https://soundcloud.com/coptrmp3/signal-machine-live-tool/s-YUcVLLHfYGm',
-      artwork: '/artwork/coptr-signal-machine-flip.jpeg',
-    },
-    {
-      title: 'Demo Mix',
-      artist: 'Coptr',
-      url: 'https://soundcloud.com/coptrmp3/demo-mix-3/s-zfr5ILcHd2X',
-      artwork: '/artwork/coptr-demo-mix-2025.jpeg',
-    },
-  ];
+  const songs = getSongsByNewestRelease();
 
   return (
     <div className="min-h-screen bg-black text-white pt-20">
@@ -65,21 +18,19 @@ export default function MusicPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {releases.map((release, index) => (
-            <a
-              key={index}
-              href={release.url}
-              target="_blank"
-              rel="noopener noreferrer"
+          {songs.map((song) => (
+            <Link
+              key={song.id}
+              to={song.fanLink}
               className="group relative overflow-hidden rounded-2xl transition-all duration-500 hover:scale-105 border border-white/10 hover:border-[#70ffdf]/50 hover:shadow-2xl hover:shadow-[#70ffdf]/20 aspect-square"
             >
               <img
-                src={release.artwork}
-                alt={release.title}
+                src={song.coverArt}
+                alt={song.title}
                 className="w-full h-full object-cover"
               />
 
-              <ExternalLink
+              <ArrowUpRight
                 className="absolute top-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity z-10"
                 size={24}
               />
@@ -88,15 +39,15 @@ export default function MusicPage() {
 
               <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
                 <h3 className="text-2xl font-bold text-white mb-2">
-                  {release.title}
+                  {song.title}
                 </h3>
                 <h4 className="text-lg text-gray-300">
-                  {release.artist}
+                  {song.artist}
                 </h4>
               </div>
 
               <div className="absolute inset-0 bg-gradient-to-br from-[#70ffdf]/0 to-[#fd46f0]/0 group-hover:from-[#70ffdf]/10 group-hover:to-[#fd46f0]/10 transition-all duration-500 pointer-events-none"></div>
-            </a>
+            </Link>
           ))}
         </div>
 
