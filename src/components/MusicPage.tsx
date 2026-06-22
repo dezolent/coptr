@@ -3,6 +3,12 @@ import { ExternalLink } from 'lucide-react';
 export default function MusicPage() {
   const releases = [
     {
+      title: 'CRUISIN',
+      artist: 'Coptr',
+      url: 'https://soundcloud.com/coptrmp3/cruisin',
+      artwork: '/artwork/coptr-cruisin.webp',
+    },
+    {
       title: 'Gone (Coptr Remix)',
       artist: 'Coptr, Dezolent, & Mona Moua',
       url: 'https://dezolent.com/stream/gone-coptr-remix',
