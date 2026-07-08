@@ -9,13 +9,13 @@ export default function Navigation() {
   const navItems = [
     { path: '/', label: 'Home' },
     { path: '/music', label: 'Music' },
-    { path: '/press-kit', label: 'Press Kit' },
+    { path: '/epk', label: 'EPK' },
   ];
 
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-sm border-b border-[#70ffdf]/20">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-sm border-b border-[#70ffdf]/20 print:hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link to="/" className="flex items-center">
