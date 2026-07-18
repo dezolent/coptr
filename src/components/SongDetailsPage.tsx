@@ -2,6 +2,7 @@ import { ArrowLeft, ArrowUpRight, CalendarDays, Clock3, Download, Tag } from 'lu
 import { Link, useParams } from 'react-router-dom';
 import { socials } from '../data/socials';
 import { getSongById, platformLogos } from '../data/songs';
+import NotFoundPage from './NotFoundPage';
 import SongSeo from './SongSeo';
 
 function formatReleaseDate(releaseDate: string) {
@@ -18,29 +19,7 @@ export default function SongDetailsPage() {
   const song = getSongById(songId);
 
   if (!song) {
-    return (
-      <main className="relative min-h-screen overflow-hidden bg-black px-4 pb-16 pt-32 text-white">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(29,38,155,0.55),transparent_55%)]" />
-        <div className="relative mx-auto flex max-w-xl flex-col items-center text-center">
-          <p className="mb-4 text-xs font-bold tracking-[0.32em] text-[#70ffdf]">
-            TRACK NOT FOUND
-          </p>
-          <h1 className="mb-5 text-4xl font-black tracking-tight sm:text-6xl">
-            This fanlink is off the radar.
-          </h1>
-          <p className="mb-8 max-w-md text-base leading-relaxed text-gray-400 sm:text-lg">
-            The song may have moved, or the link may be incomplete. Browse the music catalog to keep listening.
-          </p>
-          <Link
-            to="/music"
-            className="inline-flex items-center gap-2 rounded-full border border-[#70ffdf]/50 bg-[#70ffdf]/10 px-6 py-3 font-bold text-[#70ffdf] transition hover:border-[#70ffdf] hover:bg-[#70ffdf]/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#70ffdf]"
-          >
-            <ArrowLeft size={18} />
-            Back to music
-          </Link>
-        </div>
-      </main>
-    );
+    return <NotFoundPage />;
   }
 
   return (

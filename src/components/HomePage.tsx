@@ -2,6 +2,7 @@ import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { socials } from '../data/socials';
 import { getSongsByNewestRelease } from '../data/songs';
+import PageSeo from './PageSeo';
 
 
 export default function HomePage() {
@@ -9,6 +10,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-black text-white">
+      <PageSeo page="home" />
       <section className="relative isolate min-h-[100svh] overflow-hidden bg-[#02030a] px-5 pb-16 pt-28 sm:px-8 lg:flex lg:items-center lg:px-12 lg:pb-20 lg:pt-24">
         <div className="absolute inset-0 -z-30 bg-[radial-gradient(circle_at_78%_24%,rgba(4,93,237,0.35),transparent_32%),radial-gradient(circle_at_22%_76%,rgba(253,70,240,0.18),transparent_30%),linear-gradient(135deg,#02030a_0%,#080b22_48%,#02030a_100%)]" />
         <div className="absolute inset-0 -z-20 opacity-30 [background-image:linear-gradient(rgba(112,255,223,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(112,255,223,0.08)_1px,transparent_1px)] [background-size:72px_72px] [mask-image:linear-gradient(to_bottom,black,transparent_88%)]" />

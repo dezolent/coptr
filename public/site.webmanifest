@@ -1,0 +1,26 @@
+{
+  "name": "Coptr Official Website",
+  "short_name": "Coptr",
+  "description": "Official website of Coptr, a Brickell-based helicopter pilot and Miami DJ producing melodic hybrid dubstep and rock-influenced bass music.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#02030a",
+  "theme_color": "#02030a",
+  "lang": "en-US",
+  "id": "https://coptr.me/",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

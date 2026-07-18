@@ -2,6 +2,7 @@ import { ArrowUpRight, CalendarDays, Download, Headphones, Mail, MapPin, Plane, 
 import { Link } from 'react-router-dom';
 import { socials } from '../data/socials';
 import { getSongById } from '../data/songs';
+import PageSeo from './PageSeo';
 
 const bookingEmail = 'paul.f.gerlach@gmail.com';
 const bookingEmailUrl = 'mailto:paul.f.gerlach@gmail.com';
@@ -30,6 +31,7 @@ export default function EpkPage() {
 
   return (
     <main className="min-h-screen overflow-hidden bg-[#01040a] px-4 pb-12 pt-28 text-white sm:px-6 lg:pt-32 print:bg-white print:p-0">
+      <PageSeo page="epk" />
       <div className="pointer-events-none fixed inset-0 -z-10 print:hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_12%,rgba(112,255,223,0.16),transparent_28%),radial-gradient(circle_at_82%_18%,rgba(253,70,240,0.16),transparent_30%),radial-gradient(circle_at_58%_78%,rgba(4,93,237,0.22),transparent_34%),linear-gradient(135deg,#01040a_0%,#071226_45%,#02030a_100%)]" />
         <div className="absolute inset-0 opacity-25 [background-image:linear-gradient(rgba(112,255,223,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(112,255,223,0.08)_1px,transparent_1px)] [background-size:64px_64px]" />

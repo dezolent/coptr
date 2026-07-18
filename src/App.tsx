@@ -4,6 +4,7 @@ import HomePage from './components/HomePage';
 import MusicPage from './components/MusicPage';
 import EpkPage from './components/EpkPage';
 import SongDetailsPage from './components/SongDetailsPage';
+import NotFoundPage from './components/NotFoundPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/epk" element={<EpkPage />} />
         <Route path="/press-kit" element={<EpkPage />} />
         <Route path="/stream/:songId" element={<SongDetailsPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   );

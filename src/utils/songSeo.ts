@@ -13,6 +13,16 @@ export function getSongSeo(
     description: `Listen to ${song.title} by ${song.artist}.`,
     image: `${normalizedOrigin}${song.coverArt}`,
     imageAlt: `${song.title} cover art`,
+    imageType: 'image/webp',
+    imageWidth: '500',
+    imageHeight: '500',
     url: `${normalizedOrigin}${song.fanLink}`,
   };
+}
+
+export function getIsoDuration(duration: string | undefined) {
+  if (!duration) return undefined;
+  const match = /^(\d+):(\d{2})$/.exec(duration);
+  if (!match) return undefined;
+  return `PT${Number(match[1])}M${Number(match[2])}S`;
 }

@@ -1,12 +1,14 @@
 import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { getSongsByNewestRelease } from '../data/songs';
+import PageSeo from './PageSeo';
 
 export default function MusicPage() {
   const songs = getSongsByNewestRelease();
 
   return (
     <div className="min-h-screen bg-black text-white pt-20">
+      <PageSeo page="music" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="text-center mb-16">
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-[#70ffdf] via-[#fd46f0] to-[#9d4dff] bg-clip-text text-transparent">

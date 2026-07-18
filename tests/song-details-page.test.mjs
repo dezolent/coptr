@@ -13,7 +13,7 @@ test('app registers the dynamic song fanlink route', async () => {
   assert.match(source, /<Route path="\/stream\/:songId" element=\{<SongDetailsPage \/>\} \/>/);
 });
 
-test('song details page renders mapped platform links and a not-found path', async () => {
+test('song details page renders mapped platform links and delegates missing songs to the 404 page', async () => {
   assert.ok(existsSync(pageUrl), 'SongDetailsPage.tsx should exist');
   const source = await readFile(pageUrl, 'utf8');
 
@@ -23,7 +23,8 @@ test('song details page renders mapped platform links and a not-found path', asy
   assert.match(source, /platformLogos\[link\.platform\]/);
   assert.match(source, /target="_blank"/);
   assert.match(source, /rel="noopener noreferrer"/);
-  assert.match(source, /<Link\s+to="\/music"/);
+  assert.match(source, /import NotFoundPage from ['"]\.\/NotFoundPage['"]/);
+  assert.match(source, /if \(!song\) \{[\s\S]*return <NotFoundPage \/>/);
 });
 
 test('song details page places accessible social icons after metadata', async () => {

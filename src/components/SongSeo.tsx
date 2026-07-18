@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
+import { createPortal } from 'react-dom';
+import { ARTIST_ID, SITE_LOCALE, SITE_NAME, SITE_URL } from '../data/siteSeo';
 import type { Song } from '../data/songs';
-import { getSongSeo } from '../utils/songSeo';
+import { getIsoDuration, getSongSeo } from '../utils/songSeo';
 
-const DEFAULT_TITLE = 'Coptr | Official Website';
+const DEFAULT_TITLE = 'Coptr | Miami DJ, Producer & Helicopter Pilot';
 
 interface SongSeoProps {
   song: Song;
@@ -25,19 +27,69 @@ function upsertMeta(attribute: 'name' | 'property', key: string, content: string
   element.dataset.songSeo = 'true';
 }
 
+function getSongSchema(song: Song) {
+  const seo = getSongSeo(song, SITE_URL);
+  const streamingUrls = song.streamingLinks.map((link) => link.url);
+  const duration = getIsoDuration(song.duration);
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'MusicRecording',
+    '@id': `${seo.url}#recording`,
+    name: song.title,
+    url: seo.url,
+    mainEntityOfPage: seo.url,
+    description: seo.description,
+    image: {
+      '@type': 'ImageObject',
+      url: seo.image,
+      width: Number(seo.imageWidth),
+      height: Number(seo.imageHeight),
+      caption: seo.imageAlt,
+    },
+    byArtist: song.artist === SITE_NAME
+      ? { '@type': 'MusicGroup', '@id': ARTIST_ID, name: SITE_NAME, url: `${SITE_URL}/` }
+      : { '@type': 'MusicGroup', name: song.artist },
+    ...(song.releaseDate ? { datePublished: song.releaseDate } : {}),
+    ...(duration ? { duration } : {}),
+    ...(song.genres?.length ? { genre: song.genres } : {}),
+    ...(streamingUrls.length ? {
+      sameAs: streamingUrls,
+      potentialAction: {
+        '@type': 'ListenAction',
+        target: streamingUrls,
+      },
+    } : {}),
+  };
+}
+
 export default function SongSeo({ song }: SongSeoProps) {
+  const seo = getSongSeo(song, SITE_URL);
+  const schema = getSongSchema(song);
+
   useEffect(() => {
-    const seo = getSongSeo(song, window.location.origin);
+    document.head
+      .querySelector<HTMLScriptElement>('script[data-route-seo="true"][type="application/ld+json"]')
+      ?.remove();
     document.title = seo.title;
 
     const metadata: MetaDefinition[] = [
       { name: 'description', content: seo.description },
+      { name: 'keywords', content: [song.artist, song.title, ...(song.genres ?? []), 'Coptr music', 'stream music'].join(', ') },
+      { name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
       { property: 'og:type', content: 'music.song' },
+      { property: 'og:site_name', content: SITE_NAME },
+      { property: 'og:locale', content: SITE_LOCALE },
       { property: 'og:title', content: seo.title },
       { property: 'og:description', content: seo.description },
       { property: 'og:url', content: seo.url },
       { property: 'og:image', content: seo.image },
+      { property: 'og:image:type', content: seo.imageType },
+      { property: 'og:image:width', content: seo.imageWidth },
+      { property: 'og:image:height', content: seo.imageHeight },
       { property: 'og:image:alt', content: seo.imageAlt },
+      ...(song.releaseDate ? [{ property: 'music:release_date', content: song.releaseDate } as const] : []),
+      ...(song.duration ? [{ property: 'music:duration', content: String(song.duration.split(':').reduce((minutes, part) => minutes * 60 + Number(part), 0)) } as const] : []),
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:title', content: seo.title },
       { name: 'twitter:description', content: seo.description },
@@ -66,7 +118,12 @@ export default function SongSeo({ song }: SongSeoProps) {
       document.title = DEFAULT_TITLE;
       document.head.querySelectorAll('[data-song-seo="true"]').forEach((element) => element.remove());
     };
-  }, [song]);
+  }, [seo, song]);
 
-  return null;
+  return createPortal(
+    <script type="application/ld+json" data-coptr-schema="song">
+      {JSON.stringify(schema)}
+    </script>,
+    document.head,
+  );
 }
