@@ -123,9 +123,6 @@ export default function NotFoundPage() {
               <span className="block sm:inline"> exist.</span>
             </span>
           </h1>
-          <p className="mt-7 max-w-xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
-            The coordinates may be outdated or the route was entered incorrectly. Rejoin Coptr’s official flight plan below.
-          </p>
 
           <div className="mt-7 flex max-w-xl items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.055] px-4 py-3.5 backdrop-blur-md sm:px-5">
             <MapPinOff className="mt-0.5 shrink-0 text-[#fd46f0]" size={19} aria-hidden="true" />
