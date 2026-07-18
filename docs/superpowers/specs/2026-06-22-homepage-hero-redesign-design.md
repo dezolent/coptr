@@ -6,7 +6,7 @@ Replace the existing centered, text-heavy homepage hero with a modern editorial 
 
 ## Composition
 
-The desktop hero uses an asymmetrical two-column layout. The left column contains the white Coptr wordmark, the Coast Guard helicopter pilot description, the latest-release call to action, and an icon-only social row. The right column features `coptr-secondary-profile.webp` as the dominant portrait, an oversized low-contrast circle-logo watermark, and `coptr-dj-performance-photo.webp` as a smaller overlapping performance card.
+The desktop hero uses an asymmetrical two-column layout. The left column contains the white Coptr wordmark, the helicopter pilot description, the latest-release call to action, and an icon-only social row. The right column features `coptr-secondary-profile.webp` as the dominant portrait, an oversized low-contrast circle-logo watermark, and `coptr-dj-performance-photo.webp` as a smaller overlapping performance card.
 
 On mobile, the content appears first and the portrait composition follows. The performance card is reduced or removed where necessary so the primary portrait, copy, and call to action remain clear.
 
@@ -19,7 +19,7 @@ The hero retains the site's dark blue, cyan, and magenta identity. Cleaner gradi
 - Use the white Coptr brand wordmark and circle logo from `/public/brand`.
 - Use supplied artist photography from `/public/profile`.
 - Remove the genre heading.
-- Include the Coast Guard helicopter pilot description.
+- Include the helicopter pilot description.
 - Preserve the current latest-release destination as the primary call to action.
 - Render every social profile as an icon-only link using the existing shared social data and assets.
 - Give image and social links accessible names, visible focus states, and meaningful alternative text.

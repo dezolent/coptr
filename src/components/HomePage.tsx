@@ -33,7 +33,7 @@ export default function HomePage() {
             </h1>
 
             <p className="mt-8 max-w-lg text-xl font-medium leading-relaxed text-white sm:text-2xl">
-              Coast Guard helicopter pilot by day, bass architect by night
+              Helicopter Pilot by Day, Bass Architect by Night
             </p>
             <p className="mt-4 max-w-lg text-base leading-7 text-slate-400 sm:text-lg">
               Precision shaped in the air. Energy engineered for the dance floor.
@@ -80,7 +80,7 @@ export default function HomePage() {
             <div className="relative ml-auto aspect-[4/5] w-[88%] overflow-hidden rounded-[2rem] border border-white/15 bg-[#080b22] shadow-[0_30px_100px_rgba(0,0,0,0.65)] sm:w-[78%] lg:w-[82%]">
               <img
                 src="/profile/coptr-sunglasses.webp"
-                alt="Coptr, electronic music artist and Coast Guard helicopter pilot"
+                alt="Coptr, electronic music artist and helicopter pilot"
                 className="h-full w-full object-cover object-[50%_28%]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#02030a]/85 via-transparent to-[#045ded]/10" />
@@ -154,7 +154,7 @@ export default function HomePage() {
               Emerging from vibrant Miami, Coptr is the EDM project of producer and DJ Paul Gerlach. His signature sound is an intense sonic journey of Melodic Dubstep and Brostep, blending in energetic Bass House and Drum and Bass. With a highly technical, melodic complexity reminiscent of Virtual Riot and the arcade-inspired energy of Barely Alive, Coptr crafts tracks designed to offer a euphoric escape for a wide audience.
             </p>
             <p className="text-gray-300 leading-relaxed text-lg">
-              Coptr's sonic vision is directly influenced by his career as a Coast Guard helicopter pilot. The scientific yet artistic precision, broad range of operations, and the dynamic energy of Miami as seen from above are woven into every beat, evoking constant climb and descent in a meticulous soundscape. This connection to the essence of flight ensures an always-energetic, commanding presence in his music.
+              Coptr's sonic vision is directly influenced by his career as a helicopter pilot. The scientific yet artistic precision, broad range of operations, and the dynamic energy of Miami as seen from above are woven into every beat, evoking constant climb and descent in a meticulous soundscape. This connection to the essence of flight ensures an always-energetic, commanding presence in his music.
             </p>
           </div>
         </div>

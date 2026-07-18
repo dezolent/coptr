@@ -31,7 +31,7 @@ test('homepage hero uses the approved editorial assets and content', async () =>
   assert.match(source, /\/brand\/coptr-white-circle-logo\.webp/);
   assert.match(source, /\/profile\/coptr-secondary-profile\.webp/);
   assert.match(source, /\/profile\/coptr-dj-performance-photo\.webp/);
-  assert.match(source, /Coast Guard helicopter pilot by day, bass architect by night/);
+  assert.match(source, /Helicopter Pilot by Day, Bass Architect by Night/);
   assert.match(source, /to=\{latestReleases\[0\]\.fanLink\}/);
   assert.doesNotMatch(source, /MELODIC DUBSTEP|BROSTEP|BASS HOUSE/);
 });
